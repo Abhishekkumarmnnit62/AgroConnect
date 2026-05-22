@@ -5,6 +5,8 @@ import cookieParser from "cookie-parser";
 import connectDB from "./utils/dbConnect.js";
 import cropRouter from "./routes/crop.route.js";
 import userRouter from "./routes/user.route.js";
+import orderRouter
+from "./routes/order.route.js";
 
 dotenv.config();
 
@@ -16,6 +18,10 @@ app.use(cors());
 app.use(cookieParser());
 app.use("/api/v1/user", userRouter);
 app.use("/api/v1/crop", cropRouter);
+app.use(
+  "/api/v1/order",
+  orderRouter
+);
 
 app.get("/", (req, res) => {
   res.send("AgroConnect API Running...");
