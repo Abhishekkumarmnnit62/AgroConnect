@@ -7,6 +7,7 @@ import cropRouter from "./routes/crop.route.js";
 import userRouter from "./routes/user.route.js";
 import orderRouter from "./routes/order.route.js";
 import cartRouter from "./routes/cart.route.js";
+import adminRouter from "./routes/admin.route.js";
 dotenv.config();
 
 connectDB();
@@ -22,6 +23,8 @@ app.use("/api/v1/crop", cropRouter);
 app.use("/api/v1/order", orderRouter);
 
 app.use("/api/v1/cart", cartRouter);
+
+app.use("/api/v1/admin", adminRouter);
 
 app.get("/", (req, res) => {
   res.send("AgroConnect API Running...");
